@@ -15,10 +15,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key:true|
+|user_id|integer|null: false|
 |user_name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
+|group_id|integer|null: false, foreign_key:true|
 
 ### Association
 - has_many :members
