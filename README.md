@@ -18,7 +18,6 @@
 |name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|group_id|integer|null: false, foreign_key:true|
 
 ### Association
 - has_many :members
