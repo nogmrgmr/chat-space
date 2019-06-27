@@ -11,6 +11,23 @@
 - belongs_to :user
 
 
+# userテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key:true|
+|user_name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association
+- has_many :members
+- has_many :groups, through: :members
+- has_many :messages
+- has_many :images
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
