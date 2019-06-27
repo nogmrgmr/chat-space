@@ -11,7 +11,7 @@
 - belongs_to :user
 
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
