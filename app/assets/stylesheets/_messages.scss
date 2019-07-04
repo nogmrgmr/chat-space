@@ -1,0 +1,87 @@
+
+
+  .header {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    background-color: #38AEF0;
+    }
+
+  .above {
+    height: 82px;
+    width:100%;
+    margin: auto;
+    background-color: red;
+    position: relative;
+
+    &__left {
+      color: white;
+      background-color: #253141;
+      height: 100%;
+      width: 300px;
+      float: left;
+    }
+
+    &__main {
+      color:black;
+      height: 100%;
+      width: calc(100% - 300px);
+      float: right;
+      background-color: #fafafa;
+    }
+  }
+
+  .below {
+    // height: 100%;
+    // height: calc(100% - 82px - 30px);
+    width: 100%;
+    // padding-top: 112px;
+    background-color: green;
+    // position: relative;
+
+    &__left {
+      color: white;
+      background-color: #2f3e51;
+      // height: 100%;
+      height: calc(100% - 82px - 30px);
+      width: 300px;
+      float: left;
+      position: absolute;
+      // padding: 112px;
+     }
+
+    &__main {
+      // height: calc(100% - 90px);
+      height: calc(100% - 82px - 30px - 90px);
+      width: calc(100% - 300px);
+      float: right;
+      background-color: #fafafa;
+      color: black;
+      position: absolute;
+      left: 300px;
+      
+      // padding: 112px 0 0 300px;
+     }
+  }
+
+  .message {
+      color: black;
+      height: 90px;
+      background-color: #fafafa;
+      width: 100%;
+      position: absolute;
+      left: 300px;
+      bottom: 0;
+  }
+
+   //  .clearfix:after{
+  //   content: "";
+  //   clear: both;
+  //   display: block;
+  //  }   
+
+
+
+
+
+
