@@ -1,146 +1,145 @@
-.top_message
-  MUST JUMP MESSAGE "グループを作成しました"
-      
-.above
-  .above__left
-    .above__left__name
-      CURRENT_USER NAME
-    .above__left__btn
-    =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "above__left__btn above__left__btn--gear" do
-      = fa_icon 'cog'
-    =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "above__left__btn above__left__btn--edit" do
-      = fa_icon 'edit'
-  .above__main
-    .above__main__current_group_name
+-# .top_message
+-#   MUST JUMP MESSAGE "グループを作成しました"
+
+.left 
+  .left__header
+    .left__header__name
+      CURRENT USER NAME
+    .left__headder__btn
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--gear" do
+        = fa_icon 'cog'
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--edit" do
+        = fa_icon 'edit'
+  
+  .left__main
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group1 仮html
+        .left__main__group_box__group_name__text
+          latest message
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group2 仮html
+        .left__main__group_box__group_name__text
+          latest message     
+    
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group3 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+    
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group4 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group5 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group6 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group7 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group8 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group9 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+.right
+  .right__header 
+    .right__header__current_group_name
       current group name
-    .above__main__joined_user
-      Member: joined user name 
-    .above__main__btn
+    .right__header__joined_user
+      Menber: joined user name
+    .right__header__btn
       =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "EditLink" do
         Edit
-
-.below
-  .below__left
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group1 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group2 仮html
-        .below__left__group_box__group_name__text
-          latest message
-    
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group3 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group4 仮html
-        .below__left__group_box__group_name__text
-          latest message
-    
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group5 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group6 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group7 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group8 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group9 仮html
-        .below__left__group_box__group_name__text
-          latest message
-    
-    .below__left__group_box
-      .below__left__group_box__group_name
-        group10 仮html
-        .below__left__group_box__group_name__text
-          latest message
-
-     
-    
-  .below__main
-    .below__main__first_group_box
-      .below__main__first_group_box--name
+  
+  .right__main
+    .right__main__first_group_box
+      .right__main__first_group_box--name
         username
-      .below__main__first_group_box--date
+      .right__main__first_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__first_group_box--message
+      .right__main__first_group_box--message
         Hello world1
 
-    .below__main__other_group_box
-      .below__main__other_group_box--name
+    .right__main__other_group_box
+      .right__main__other_group_box--name
         username
-      .below__main__other_group_box--date
+      .right__main__other_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
+      .right__main__other_group_box--message
         Hello world2
 
-    .below__main__other_group_box
-      .below__main__other_group_box--name
+    .right__main__other_group_box
+      .right__main__other_group_box--name
         username
-      .below__main__other_group_box--date
+      .right__main__other_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
-        Hello world3 
+      .right__main__other_group_box--message
+        Hello world3
 
-    .below__main__other_group_box
-      .below__main__other_group_box--name
+    .right__main__other_group_box
+      .right__main__other_group_box--name
         username
-      .below__main__other_group_box--date
+      .right__main__other_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
+      .right__main__other_group_box--message
         Hello world4
-    
-    .below__main__other_group_box
-      .below__main__other_group_box--name
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
         username
-      .below__main__other_group_box--date
+      .right__main__other_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
+      .right__main__other_group_box--message
         Hello world5
-    
-    .below__main__other_group_box
-      .below__main__other_group_box--name
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
         username
-      .below__main__other_group_box--date
+      .right__main__other_group_box--date
         2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
+      .right__main__other_group_box--message
         Hello world6
-    
-    .below__main__other_group_box
-      .below__main__other_group_box--name
-        username
-      .below__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .below__main__other_group_box--message
-        Hello world7
 
-      
+.form
+  %input.form__message{:placeholder => "type a message"}
+    .form__message__photo
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg",class: "image"  do
+        = fa_icon 'image'
+  .form__btn
+    =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
+      Send
 
-.message
-  SEND
+
+-# .form
+-#       %form
+-#         %input.form__message
+-#         .form__mask
+-#           %label.form__mask__image
+-#             = fa_icon 'picture-o', class: 'icon'
+-#             %input.hidden{type: 'file'}
+-#         %input.form__submit{type: 'submit', value: 'Send'}

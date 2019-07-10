@@ -1,32 +1,25 @@
+  // .top_message {
+  //   height: 30px;
+  //   width: 100vw;
+  //   text-align: center;
+  //   background-color: #38AEF0;
+  //   }
+
+  $main-height:  calc(100% - 100px - 30px - 90px);
+  $right-width: calc(100% - 300px);
 
 
-  .top_message {
-    height: 0px;
-    width: 100vw;
-    text-align: center;
-    background-color: #38AEF0;
-   
-    }
-
-  .above {
-    // padding-top: 30px;
-    height: 100px;
-    width:100vw;
-    background-color:#ffffff;
-    position: relative;
-    
-
-    &__left {
-      color: white;
-      background-color: #253141;
+  .left {
+    width: 300px;
+    color:#ffffff;
+    height: 100vh;
+    &__header {
       height: 100px;
       width: 300px;
-      float: left;
-      position: fixed;
-      top:0px;
+      background-color: #253141;
+      // top:30px;
+      top: 0;
       left:0;
-      z-index: 1;
-  
       &__name {
         padding-top: 42px;
         padding-left: 20px;
@@ -41,94 +34,30 @@
         float: right;
         &--gear {
           padding-right: 20px;
+          cursor: pointer;
         }
         &--edit {
           padding-right: 5px;
+          cursor: pointer;
         }
       }
     }
-    
     &__main {
-      // padding-top: 42px;
-      // margin-left: 300px;
-      color:black;
-      height: 99px;
-      width: calc(100% - 300px);
-      background-color:#fafafa;
-      // position: relative;
-      border-bottom: solid 1px #eeeeee;
-      position: fixed;
-      top:0px;
-      left:300px;
-      z-index: 1;
-  
-     
-
-      &__current_group_name {
-        font-size: 20px;
-        padding-left: 40px;
-        padding-top: 40px;
-        // margin-bottom: 15px;
-        color: #333333;
-        position: absolute;
-        float: left;
-      }
-      &__joined_user {
-        font-size: 12px;
-        padding-left: 40px;
-        padding-top: 70px;
-        color: #999999;
-        position: absolute;
-        float: left;
-       }
-      &__btn {
-        font-size:18px;
-        // height: 40px;
-        // width: 20px;
-        border:solid 1px ;
-        color: #38AEF0;       
-        float: right;
-        // margin-top: 0px;
-        margin-top: 28px;
-        margin-right: 40px;
-        padding:10px 20px 10px 20px;
-        .EditLink {
-        text-decoration: none;
-        color: #38AEF0;
-        }
-        // padding-right: 20px;
-        // padding-left: 20px;
-        // position: absolute;
-        // display: inline-block;
-       }
-     }
-    }
-  
-  .below {
-    // height: 100%;
-    height: calc(100% - 100px - 30px - 90px);
-    width: 100vw;
-    background-color: green;
-    // position: relative;
-   
-
-    &__left {
+      overflow:scroll;
+      height: calc(100vh - 100px);
       color: white;
       background-color: #2f3e51;
-      // height: 100%;
-      // height: calc(100% - 82px - 30px - 90px);
       width: 300px;
       float: left;
       position: absolute;
+      // padding-top:100px;
       left:0;
-      // z-index: 0;
-      overflow: scroll;
-      // padding: 112px;
       &__group_box {
         padding-left:20px;
-        height: 80px;
+        height: 91px;
         color: #ffffff;
         &__group_name {
+          padding-top: 20px;
           font-size: 15px;
           font-weight: bold;
           &__text {
@@ -136,22 +65,67 @@
             padding-top: 5px;
             font-weight: normal;
           }
-       }
+        }
       }
-     }
-  
+    }
+  }
 
+  .right {
+    height: 100%;
+    float: right;
+    left: 300px;
+    &__header {
+      height: 99px;
+      width: $right-width;
+      background-color: #fafafa;
+      color:black;
+      border-bottom: solid 1px #eeeeee;
+      position: fixed;
+      // top: 30px;
+      top:0;
+      left: 300px;
+      z-index: 2;
+      &__current_group_name {
+        font-size: 20px;
+        padding-left: 40px;
+        padding-top: 40px;
+        color: #333333;
+        position: absolute;
+        float: right;
+      }
+      &__joined_user {
+        font-size: 12px;
+        padding-left: 40px;
+        padding-top: 70px;
+        color: #999999;
+        position: absolute;
+        float: right;
+      }
+      &__btn {
+        font-size:18px;
+        border:solid 1px ;
+        color: #38AEF0;       
+        float: right;
+        margin-top: 28px;
+        margin-right: 40px;
+        padding:10px 20px 10px 20px;;
+        .EditLink {
+        text-decoration: none;
+        color: #38AEF0;
+        cursor: pointer;
+        }
+      }
+    }
     &__main {
-      // height: calc(100% - 82px - 30px - 90px);
-      width: calc(100% - 300px);
-      float: right;
+      overflow: scroll;
+      height: calc(100vh - 100px - 90px);
+      width: $right-width;
       background-color: #fafafa;
       color: black;
       position: absolute;
+      // top: 130px;
+      top:100px;
       left: 300px;
-      // z-index:0;
-      overflow: scroll;
-
       &__first_group_box {   
         height: 86px; 
         padding-top:46px;
@@ -171,12 +145,9 @@
         &--message {
           font-size: 14px;
           color: #434A54;
-          // float: left;
           padding-top: 24px;
-          // padding-left: 40px;
         }
       }
-
       &__other_group_box {
         height: 80px; 
         padding-top:40px;
@@ -196,23 +167,68 @@
         &--message {
           font-size: 14px;
           color: #434A54;
-          // float: left;
           padding-top: 24px;
-          // padding-left: 40px;
         }
       }
-      // padding: 112px 0 0 300px;
-     }
-
+    }
   }
 
-  .message {
-      position: fixed;
-      color: black;
-      height: 90px;
-      background-color: #fafafa;
-      width: calc(100vw - 300px);
-      // position: absolute;
-      left: 300px;
-      bottom: 0;
-     }
+  .form {
+    position: fixed;
+    color: black;
+    height: 90px;
+    background-color: #ddd;
+    width: calc(100vw - 300px);
+    left: 300px;
+    bottom:0;
+    
+    &__message {
+      position: absolute;
+      padding-left:10px;
+      left: 40px;
+      top:20px;
+      background-color:#fafafa;
+      height: 50px;
+      width: calc(100vw - 300px - 40px - 10px - 10px - 15px - 100px - 40px);
+      border: none;
+
+      &__photo {
+        position: absolute;
+        float:right;
+        // padding-right:10px;
+        right: 175px;
+        top:30px;
+        .image {
+        text-decoration: none;
+        font-size: 1.3rem;
+        color:black;
+        z-index: 999;
+        cursor: pointer;
+        }
+      }
+ 
+    }
+    
+    &__btn {
+      margin-left:15px;
+      position: absolute;
+      font-size:18px;
+      width:100px;
+      height: 50px;
+      background-color: #38AEF0;       
+      float: right;
+      right:40px;
+      top:22px;
+      cursor: pointer;
+
+      .Send {
+      position: absolute;
+      text-decoration: none;
+      color:white;
+      top:15px;
+      right:30px;
+      float:right;
+ 
+      }
+    } 
+  }
