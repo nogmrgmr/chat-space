@@ -1,0 +1,135 @@
+-# .top_message
+-#   MUST JUMP MESSAGE "グループを作成しました"
+
+.left 
+  .left__header
+    .left__header__name
+      CURRENT USER NAME
+    .left__headder__btn
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--gear" do
+        = fa_icon 'cog'
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--edit" do
+        = fa_icon 'edit'
+  
+  .left__main
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group1 仮html
+        .left__main__group_box__group_name__text
+          latest message
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group2 仮html
+        .left__main__group_box__group_name__text
+          latest message     
+    
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group3 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+    
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group4 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group5 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group6 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group7 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group8 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+    .left__main__group_box
+      .left__main__group_box__group_name
+        group9 仮html
+        .left__main__group_box__group_name__text
+          latest message  
+
+.right
+  .right__header 
+    .right__header__current_group_name
+      current group name
+    .right__header__joined_user
+      Menber: joined user name
+    .right__header__btn
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "EditLink" do
+        Edit
+  
+  .right__main
+    .right__main__first_group_box
+      .right__main__first_group_box--name
+        username
+      .right__main__first_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__first_group_box--message
+        Hello world1
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
+        username
+      .right__main__other_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__other_group_box--message
+        Hello world2
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
+        username
+      .right__main__other_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__other_group_box--message
+        Hello world3
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
+        username
+      .right__main__other_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__other_group_box--message
+        Hello world4
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
+        username
+      .right__main__other_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__other_group_box--message
+        Hello world5
+
+    .right__main__other_group_box
+      .right__main__other_group_box--name
+        username
+      .right__main__other_group_box--date
+        2019/07/08(mon) 15:30:22
+      .right__main__other_group_box--message
+        Hello world6
+
+.form
+  %input.form__message{:placeholder => "type a message"}
+    .form__message__photo
+      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg",class: "image"  do
+        = fa_icon 'image'
+  .form__btn
+    =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
+      Send
