@@ -6,15 +6,13 @@
   .left {
     width: 300px;
     color:#ffffff;
-    height: 100%;
+    height: 100vh;
     &__header {
       height: 100px;
       width: 300px;
       background-color: #253141;
       top: 0;
       left:0;
-      z-index: 99;
-      position: absolute;
       &__name {
         padding-top: 42px;
         padding-left: 20px;
@@ -44,7 +42,7 @@
       background-color: #2f3e51;
       width: 300px;
       float: left;
-      // position: absolute;
+      position: absolute;
       left:0;
       &__group_box {
         padding-left:20px;
@@ -74,7 +72,7 @@
       background-color: #fafafa;
       color:black;
       border-bottom: solid 1px #eeeeee;
-      // position: fixed;
+      position: fixed;
       top:0;
       left: 300px;
       z-index: 2;
@@ -83,7 +81,7 @@
         padding-left: 40px;
         padding-top: 40px;
         color: #333333;
-        // position: absolute;
+        position: absolute;
         float: right;
       }
       &__joined_user {
@@ -115,10 +113,9 @@
       width: $right-width;
       background-color: #fafafa;
       color: black;
-      // position: absolute;
+      position: absolute;
       top:100px;
       left: 300px;
-      z-index: 100;
       &__first_group_box {   
         height: 86px; 
         padding-top:46px;
@@ -224,3 +221,5 @@
       }
     } 
   }
+
+
