@@ -1,16 +1,16 @@
--# .top_message
--#   MUST JUMP MESSAGE "グループを作成しました"
-
 .left 
   .left__header
     .left__header__name
-      CURRENT USER NAME
+      = current_user.name
     .left__headder__btn
-      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--gear" do
-        = fa_icon 'cog'
-      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "left__header__btn left__header__btn--edit" do
+      =link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'left__header__btn left__header__btn--gear'
+      =link_to "/groups/new", class: "left__header__btn left__header__btn--edit" do
         = fa_icon 'edit'
-  
+
+
+
+
   .left__main
     .left__main__group_box
       .left__main__group_box__group_name
@@ -133,3 +133,4 @@
   .form__btn
     =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
       Send
+
