@@ -163,64 +163,65 @@
         }
       }
     }
-  }
+  
 
-  .form {
-    box-sizing: border-box;
-    position: fixed;
-    color: black;
-    height: 90px;
-    background-color: #ddd;
-    width: calc(100vw - 300px);
-    left: 300px;
-    bottom:0;
-    
-    &__message {
-      position: absolute;
-      padding-left:10px;
-      left: 40px;
-      top:20px;
-      background-color:#fafafa;
-      height: 50px;
-      width: calc(100vw - 300px - 40px - 10px - 10px - 15px - 100px - 40px);
-      border: none;
-
-      &__photo {
+    &__form {
+      box-sizing: border-box;
+      position: fixed;
+      color: black;
+      height: 90px;
+      background-color: #ddd;
+      width: calc(100vw - 300px);
+      left: 300px;
+      bottom:0;
+      
+      &__message {
         position: absolute;
-        float:right;
-        right: 175px;
-        top:30px;
-        .image {
-        text-decoration: none;
-        font-size: 1.3rem;
-        color:black;
-        z-index: 999;
-        cursor: pointer;
-        }
-      }
- 
-    }
-    
-    &__btn {
-      margin-left:15px;
-      position: absolute;
-      font-size:18px;
-      width:100px;
-      height: 50px;
-      background-color: #38AEF0;       
-      float: right;
-      right:40px;
-      top:22px;
-      cursor: pointer;
+        padding-left:10px;
+        left: 40px;
+        top:20px;
+        background-color:#fafafa;
+        height: 50px;
+        width: calc(100vw - 300px - 40px - 10px - 10px - 15px - 100px - 40px);
+        border: none;
 
-      .Send {
-      position: absolute;
-      text-decoration: none;
-      color:white;
-      top:15px;
-      right:30px;
-      float:right;
- 
+        &__photo {
+          position: absolute;
+          float:right;
+          right: 175px;
+          top:30px;
+          .image {
+          text-decoration: none;
+          font-size: 1.3rem;
+          color:black;
+          z-index: 999;
+          cursor: pointer;
+          }
+        }
+  
       }
-    } 
+      
+      &__btn {
+        margin-left:15px;
+        position: absolute;
+        font-size:18px;
+        width:100px;
+        height: 50px;
+        background-color: #38AEF0;       
+        float: right;
+        right:40px;
+        top:22px;
+        cursor: pointer;
+
+        .Send {
+        position: absolute;
+        text-decoration: none;
+        color:white;
+        top:15px;
+        right:30px;
+        float:right;
+  
+        }
+      } 
   }
+}
