@@ -162,10 +162,10 @@
           padding-top: 24px;
         }
       }
-    }
+    
   
 
-    &__form {
+    &__main__form {
       box-sizing: border-box;
       position: fixed;
       color: black;
@@ -200,7 +200,7 @@
         }
   
       }
-      
+    
       &__btn {
         margin-left:15px;
         position: absolute;
@@ -222,6 +222,7 @@
         float:right;
   
         }
-      } 
+      }
+    } 
   }
 }
