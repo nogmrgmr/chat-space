@@ -5,9 +5,9 @@
     .left__headder__btn
       =link_to edit_user_path(current_user) do
         = fa_icon 'cog', class: 'left__header__btn left__header__btn--gear'
-      =link_to "/groups/new", class: "left__header__btn left__header__btn--edit" do
-        = fa_icon 'edit'
-
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'left__header__btn left__header__btn--edit'
+  
 
   .left__main
     .left__main__group_box
