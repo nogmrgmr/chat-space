@@ -6,7 +6,6 @@
 
   .left {
     width: 300px;
-    color:#ffffff;
     float:left;
     &__header {
       height: 100px;
@@ -39,28 +38,33 @@
     &__main {
       overflow:scroll;
       height: calc(100vh - 100px);
-      color: white;
       background-color: #2f3e51;
       width: 300px;
       float: left;
       position: absolute;
       left:0;
-      &__group_box {
-        padding-left:20px;
-        height: 91px;
-        color: #ffffff;
-        &__group_name {
-          padding-top: 20px;
-          font-size: 15px;
-          font-weight: bold;
-          &__text {
-            font-size: 14px;
-            padding-top: 5px;
-            font-weight: normal;
-          }
-        }
-      }
     }
+  }
+  .left__main__group_box {
+    padding-left:20px;
+    height: 91px;
+    color: #ffffff;
+  }
+  
+  .edittext {
+    text-decoration: none;
+  }
+  .group_name {
+    text-decoration: none;
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .group__message {
+    text-decoration: none;
+    font-size: 14px;
+    padding-top: 5px;
+    font-weight: normal;
   }
 
   .right {

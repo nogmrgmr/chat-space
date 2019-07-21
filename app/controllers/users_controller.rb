@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    # binding.pry
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -13,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
     @member = Member.new(member_params)
     if @member.save
       flash[:notice] = "アカウントが作成されました"
