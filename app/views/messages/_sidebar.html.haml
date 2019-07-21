@@ -1,0 +1,21 @@
+.left 
+  .left__header
+    .left__header__name
+      = current_user.name
+    .left__headder__btn
+      =link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'left__header__btn left__header__btn--gear'
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'left__header__btn left__header__btn--edit'
+  
+
+
+  .left__main
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group),class: 'edittext' do
+        .left__main__group_box
+          .group_name
+            = group.name
+            .group__message
+              メッセージはまだありません。
+    
