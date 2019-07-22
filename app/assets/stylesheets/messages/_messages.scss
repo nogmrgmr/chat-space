@@ -37,7 +37,7 @@
     }
     &__main {
       overflow:scroll;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 90px);
       background-color: #2f3e51;
       width: 300px;
       float: left;
@@ -69,7 +69,8 @@
 
   .right {
     width: calc(100vw - 300px);
-    display:flex;
+    // display:flex;
+    position: absolute;
     left: 300px;
     &__header {
       height: 99px;
@@ -111,63 +112,94 @@
         }
       }
     }
-    &__main {
+   
+  .messages {
+    background-color: #fafafa;
+    box-sizing: border-box;
+    position: absolute;
+    height: calc(100vh - 90px);
+    width: 100vw;
+    overflow:scroll;
+    .message {
       box-sizing: border-box;
-      overflow:scroll;
-      height: calc(100vh - 100px - 90px);
       width: $right-width;
       background-color: #fafafa;
       color: black;
-      position: absolute;
-      top:100px;
+      height: 100px;
       left: 300px;
-      &__first_group_box {   
-        // height: 86px; 
-        padding: 46px 0 40px 40px;
+      
+      .upper-message {
+        display: flex;
+        padding: 46px 0 0px 40px;
         margin-bottom:10px;
-        &--name {  
+        &__user-name {
+          color: #434a54;
           font-size: 16px;
           font-weight: bold;
-          color: #434A54;   
-          float: left;
-
         }
-        &--date {
+        &__date {
+          color: #999;
           font-size: 12px;
-          color: #999999;
-          float:left;
-          padding-left:10px;
-        }
-        &--message {
-          font-size: 14px;
-          color: #434A54;
-          padding-top: 24px;
+          padding-left: 10px;
         }
       }
-      &__other_group_box {
-        // height: 80px; 
-        padding:0 0 40px 40px;
-        margin-bottom:10px;
-        &--name {    
-          font-size: 16px;
-          font-weight: bold;
-          color: #434A54;   
-          float: left;     
-        }
-        &--date {
-          font-size: 12px;
-          color: #999999;
-          float:left;
-          padding-left:10px;
-        }
-        &--message {
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: #434a54;
           font-size: 14px;
-          color: #434A54;
           padding-top: 24px;
+          padding:0 0 40px 40px;
+          margin-bottom:10px;
         }
       }
+     }    
     }
   }
+// .upper-message {   
+      //   padding: 46px 0 40px 40px;
+      //   margin-bottom:10px;
+      //   &__user-name {  
+      //     font-size: 16px;
+      //     font-weight: bold;
+      //     color: #434A54;   
+      //     float: left;
+      //   }
+      //   &__date {
+      //     font-size: 12px;
+      //     color: #999999;
+      //     float:left;
+      //     padding-left:10px;
+      //   }
+      // .lower-message {
+      //   font-size: 14px;
+      //   color: red;
+      //   padding-top: 24px;
+      //   padding:0 0 40px 40px;
+      //   margin-bottom:10px;
+
+      
+      // &__other_group_box {
+    
+      //   &--name {    
+      //     font-size: 16px;
+      //     font-weight: bold;
+      //     color: #434A54;   
+      //     float: left;     
+      //   }
+      //   &--date {
+      //     font-size: 12px;
+      //     color: #999999;
+      //     float:left;
+      //     padding-left:10px;
+      //   }
+      //   &--message {
+      //     font-size: 14px;
+      //     color: #434A54;
+      //     padding-top: 24px;
+      //   }
+      // }
+  
 
   .form {
     position: fixed;
@@ -234,5 +266,6 @@
       // float:right;
  
       // }
-    } 
-  }
+      }
+    }
+ 
