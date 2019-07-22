@@ -3,9 +3,9 @@
 .right
   .right__header 
     .right__header__current_group_name
-      current group name
+      =@group.name
     .right__header__joined_user
-      Member: joined user name
+      ここにメンバーを表示しないといけない
     .right__header__btn
       =link_to edit_group_path(@group), class: "EditLink" do
         Edit
@@ -24,20 +24,3 @@
         = fa_icon 'picture-o', class: 'image'
         = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'send'
-
-
-
-  -# %input.form__message{:placeholder => "type a message"}
-  -#   .form__message__photo
-  -#     =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg",class: "image"  do
-  -#       = fa_icon 'image'
-  -# .form__btn
-  -#   =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
-  -#     Send
-
-
-
-
-
-
-

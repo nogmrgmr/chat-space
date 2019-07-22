@@ -1,25 +1,13 @@
--# .right__main
--#   .right__main__first_group_box
--#     .right__main__first_group_box--name
--#       = message.user.name
--#     .right__main__first_group_box--data
--#       = message.created_at.strftime("%Y/%m/%d %H:%M")
--#   .right__main__other_group_box
--#     - if message.content.present?
--#       %p.lower-message__content
--#         = message.content
--#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
-.messges
-  .message
-    .upper-message
-      .upper-message__user-name
-        = message.user.name
-      .upper-message__date
-        = message.created_at.strftime("%Y/%m/%d %H:%M")
-    .lower-message
-      - if message.content.present?
-        %p.lower-message__content
-          = message.content
-      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
