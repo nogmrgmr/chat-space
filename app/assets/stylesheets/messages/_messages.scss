@@ -170,7 +170,6 @@
   }
 
   .form {
-    // box-sizing: border-box;
     position: fixed;
     color: black;
     height: 90px;
@@ -189,42 +188,51 @@
       width: calc(100vw - 300px - 40px - 10px - 10px - 15px - 100px - 40px);
       border: none;
 
-      &__photo {
-        position: absolute;
-        float:right;
-        right: 175px;
-        top:30px;
-        .image {
-        text-decoration: none;
-        font-size: 1.3rem;
-        color:black;
-        z-index: 999;
-        cursor: pointer;
-        }
+      
       }
- 
+  .form__mask {
+    position: absolute;
+    float:right;
+    right: 175px;
+    top:30px;
+    &__image {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color:black;
+    cursor: pointer;
+  .hidden {
+    display: none;
     }
-    
-    &__btn {
-      margin-left:15px;
-      position: absolute;
-      font-size:18px;
-      width:100px;
-      height: 50px;
-      background-color: #38AEF0;       
-      float: right;
-      right:40px;
-      top:22px;
-      cursor: pointer;
 
-      .Send {
-      position: absolute;
-      text-decoration: none;
-      color:white;
-      top:15px;
-      right:30px;
-      float:right;
+    }
+  }
+    
+  .send {
+    margin-left:15px;
+    position: absolute;
+    font-size:18px;
+    width:100px;
+    height: 50px;
+    background-color: #38AEF0;       
+    float: right;
+    right:40px;
+    top:22px;
+    cursor: pointer;
+    color: white;
+  
+  // .hidden {
+  //   display: none;
+  // }
+
+
+      // .Send {
+      // position: absolute;
+      // text-decoration: none;
+      // color:white;
+      // top:15px;
+      // right:30px;
+      // float:right;
  
-      }
+      // }
     } 
   }

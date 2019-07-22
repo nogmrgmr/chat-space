@@ -8,83 +8,32 @@
       Member: joined user name
     .right__header__btn
       =link_to edit_group_path(@group), class: "EditLink" do
-        edit
+        Edit
   
   
-
   .right__main
-    .right__main__first_group_box
-      .right__main__first_group_box--name
-        username
-      .right__main__first_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__first_group_box--message
-        Hello world1
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world2
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world3
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world4
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world5
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world6
-
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world7
-    
-    .right__main__other_group_box
-      .right__main__other_group_box--name
-        username
-      .right__main__other_group_box--date
-        2019/07/08(mon) 15:30:22
-      .right__main__other_group_box--message
-        Hello world8
+    = render @messages
+  
+  
 
 .form
-  %input.form__message{:placeholder => "type a message"}
-    .form__message__photo
-      =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg",class: "image"  do
-        = fa_icon 'image'
-  .form__btn
-    =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
-      Send
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'form__mask__image' do
+        = fa_icon 'picture-o', class: 'image'
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'send'
+
+
+
+  -# %input.form__message{:placeholder => "type a message"}
+  -#   .form__message__photo
+  -#     =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg",class: "image"  do
+  -#       = fa_icon 'image'
+  -# .form__btn
+  -#   =link_to "https://cdn-ak.f.st-hatena.com/images/fotolife/n/ninna2/20170411/20170411015358.jpg", class: "Send" do
+  -#     Send
 
 
 
