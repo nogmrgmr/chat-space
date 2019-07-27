@@ -1,30 +1,35 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
 
   
-  function buildMessage(messge){
+  function buildMessage(message){
+    var img  = 
     var html = `<div class="message">
-    <div class="upper-message">
-    <div class="upper-message__user-name">
-     ${message.user_id}
-    </div>
-    <div class="upper-message__date">
-     ${message.created_at}
-    </div>
-    </div>
-    <div class="lower-message">
-    <p class="lower-message__content">
-     ${message.content}
-    </p>
-    
-    </div>
-    </div>`
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user}
+                    </div>
+                    <div class="upper-message__date">
+                      ${message.date}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                    <p class="lower-message__content">
+                    ${message.content}
+                    </p> 
+                    <p class="lower-message__image">
+                    ${message.image}
+                    </p>
+                  </div>
+
+                </div>`
     return html;
   }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
+    console.log(this)
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -34,13 +39,16 @@ $(function(){
       contentType: false
     })
     .done(function(message){
+      alert('メッセージが送信されました。');
       var html = buildMessage(message);
       $('.messages').append(html)
-      $('#form_message')
-
+      $('#message_content').val('')
+      $('.send').prop('disabled', false);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(){
-      alert('error')
+      alert('エラー');
+      $('.send').prop('disabled', false);
     })
   })
 });
