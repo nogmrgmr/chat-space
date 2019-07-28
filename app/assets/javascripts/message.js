@@ -2,14 +2,10 @@ $(document).on('turbolinks:load', function(){
  
   
   function buildMessage(message){
-    console.log(JSON.stringify(message));
   　var img = message.image.url
      ?  img = `<img src=${message.image.url}>`
      :  img = ``;
 
-    // 三項演算子 ( var 変数 = 条件文 ? trueの場合の処理 : falseの場合の処理) img属性 srcタグ
-    // console.log(message.image);
-    // console.log(message.image.url);
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
