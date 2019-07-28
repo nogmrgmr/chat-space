@@ -1,8 +1,15 @@
 $(document).on('turbolinks:load', function(){
-
+ 
   
   function buildMessage(message){
-    var img  = 
+    console.log(JSON.stringify(message));
+  　var img = message.image.url
+     ?  img = `<img src=${message.image.url}>`
+     :  img = ``;
+
+    // 三項演算子 ( var 変数 = 条件文 ? trueの場合の処理 : falseの場合の処理) img属性 srcタグ
+    // console.log(message.image);
+    // console.log(message.image.url);
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -17,7 +24,7 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                     </p> 
                     <p class="lower-message__image">
-                    ${message.image}
+                    ${img}
                     </p>
                   </div>
 
@@ -27,7 +34,6 @@ $(document).on('turbolinks:load', function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -39,7 +45,6 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(message){
-      alert('メッセージが送信されました。');
       var html = buildMessage(message);
       $('.messages').append(html)
       $('#message_content').val('')
