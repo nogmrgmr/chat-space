@@ -1,4 +1,7 @@
 json.array! @members do |member|
-  json.id uer.id
+  json.id user.id
   json.name user.name
+  json.email user.email
+end
+
   
