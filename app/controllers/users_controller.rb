@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where('name LIKE(?)', "%#{params[:name]}%")
-    # binding.pry
+    @user = User.new
+    @users = User.order('name ASC')
     respond_to do |format|
       format.html
       format.json
