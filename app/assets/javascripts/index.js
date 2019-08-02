@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
 
   function userFind(user){
     var html = `<div class="chat-group-user clearfix">
-                <p class="chat-group-user__name">ユーザー名</p>
+                <p class="chat-group-user__name">${user.name}</p>
                 <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="ユーザーのid" data-user-name="ユーザー名">追加</div>
                </div>`
     return html;
@@ -16,16 +16,25 @@ $(document).on('turbolinks:load', function(){
       $.ajax({
         url: '/users',
         type: "GET",
+        data: { keyword: input },
         dataType: 'json'
       })
       .done(function(users){
-        users.forEach(function(user) {
-          userFind(user)
-        })
+        $('.chat-group-user').remove();
+        if (users.length !== 0 && input.length != 0 ) {
+          users.forEach(function(user) {
+          var html = userFind(user);
+          $('#user-search-result').append(html);
+          })
+         }
+         else{
+          //  appendErrMsgToHTML("一致するユーザーはいません")
+         }
 
+      })
       .fail(function(){
         alert('NOT JSON');
-      });
+      })
     });
-  });
-})
+});
+

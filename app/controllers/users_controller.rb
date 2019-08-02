@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   
   def index
-    @user = User.new
-    @users = User.order('name ASC')
+    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
+    # @user = User.new
+    # @users = User.order('name ASC')
     respond_to do |format|
       format.html
       format.json
@@ -37,4 +38,5 @@ class UsersController < ApplicationController
   end
   
 end
+
 

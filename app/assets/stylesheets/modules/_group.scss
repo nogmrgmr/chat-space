@@ -88,6 +88,8 @@
       display: block;
     }
 
+
+
     .chat-group-user__name {
       float: left;
     }
@@ -115,3 +117,9 @@
     border: 0;
   }
 }
+  .current-chat-group-user {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    }
