@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
   def index
   end
   
-  
   def new
     @group = Group.new
     @group.users << current_user
@@ -39,8 +38,3 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 end
-
-
-# まず登録したグループの表示
-# 現在登録のユーザの表示
-# ユーザーのindex にどう繋げるか
