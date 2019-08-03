@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
+
   function userFind(user){
     var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${user.name}</p>
@@ -7,7 +8,15 @@ $(document).on('turbolinks:load', function(){
                </div>`
     return html;
   }
-  
+
+  function addUser(user){
+    var html = `<div class='chat-group-user'>
+                  <input name='group[user_ids][]' type='hidden' value='ユーザーのid'>
+                  <p class='chat-group-user__name'>${user.name}</p>
+                  <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+                </div>`
+    return html; 
+  }
 
     $("#user-search-field").on("keyup", function(e){
         e.preventDefault();
@@ -30,11 +39,31 @@ $(document).on('turbolinks:load', function(){
          else{
           //  appendErrMsgToHTML("一致するユーザーはいません")
          }
-
       })
       .fail(function(){
         alert('NOT JSON');
       })
-    });
-});
+      });   
 
+      $(document).on("click",".chat-group-user__btn--add",function(e){
+        e.preventDefault();
+        var formData = new FormData();
+      $.ajax({
+        url: '/users',
+        type: 'GET',
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(user){
+        alert('JSON COME!')
+        var html = addUser(user);
+        $('#chat-group-users').append(html)
+        $('.').remove();
+      })
+      .fail(function(){
+        alert('NOT JASONNNNN')
+      })
+     })
+    });
