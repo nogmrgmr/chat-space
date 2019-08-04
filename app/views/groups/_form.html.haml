@@ -28,8 +28,10 @@
         - @group.users.each do |user|
           .current-chat-group-user.clearfix
             = user.name
-          %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-          %p.chat-group-user__name
+            %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
+            %p.current-chat-group-user__name
+            .user-search-remove.current-chat-group-user__btn.current-chat-group-user__btn--remove.js-remove-btn 削除
+
 
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'

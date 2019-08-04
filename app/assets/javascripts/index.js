@@ -35,9 +35,6 @@ $(document).on('turbolinks:load', function(){
           $('#user-search-result').append(html);
           })
          }
-         else{
-          //  appendErrMsgToHTML("一致するユーザーはいません")
-         }
       })
       .fail(function(){
         alert('NOT JSON');
@@ -54,30 +51,9 @@ $(document).on('turbolinks:load', function(){
 
       $(document).on("click",".chat-group-user__btn--remove",function(){
         $(this).parent().remove();
-      })
+      });
+
+      $(document).on("click",".current-chat-group-user__btn--remove",function(){
+        $(this).parent().remove();
+      });
 });
-
-
-
-// 非同期通信でやろうとしてたけど結局非同期通信しなくてよかったけど残してるやつ
-// 非同期通信でできないか試すために残しとく用
-// $(document).on("click",".chat-group-user__btn--add",function(e){
-//   $('.chat-group-form__input').submit();
-//   e.preventDefault();
-// $.ajax({
-//   url: '/users',
-//   type: 'GET',
-//   dataType: 'json',
-//   processData: false,
-//   contentType: false
-// })
-// .done(function(user){
-//   alert('JSON COME!')
-//   var html = addUser(user);
-//   $('#chat-group-users').append(html)
-//   // $('親要素ごと').remove();
-// })
-// .fail(function(){
-//   alert('NOT JASONNNNN')
-// })
-// })
