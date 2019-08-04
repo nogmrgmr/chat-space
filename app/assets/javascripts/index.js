@@ -51,6 +51,10 @@ $(document).on('turbolinks:load', function(){
         $('#chat-group-users').append(html);
         $(this).parent().remove();
       });
+
+      $(document).on("click",".chat-group-user__btn--remove",function(){
+        $(this).parent().remove();
+      })
 });
 
 
