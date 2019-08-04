@@ -44,6 +44,7 @@ $(document).on('turbolinks:load', function(){
       var html = buildMessage(message);
       $('.messages').append(html)
       $('#message_content').val('')
+      $('#message_image').val('')
       $('.send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
