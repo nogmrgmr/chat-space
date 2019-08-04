@@ -117,28 +117,3 @@
     border: 0;
   }
 }
-
-
-  .current-chat-group-user.clearfix {
-    padding: 0 15px;
-    line-height: 50px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
-    &:after {
-      content: "";
-      clear: both;
-      display: block;
-    }
-  }
-  .current-chat-group-user__name {
-    float: left;
-  }
-  .current-chat-group-user__btn {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-
-    &.current-chat-group-user__btn--remove {
-      color: #f05050;
-    }
-  }

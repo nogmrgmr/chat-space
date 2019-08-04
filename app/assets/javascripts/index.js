@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function(){
         dataType: 'json'
       })
       .done(function(users){
-        $('.chat-group-user').remove();
+        $('chat-group-user clearfix').remove();
         if (users.length !== 0 && input.length != 0 ) {
           users.forEach(function(user) {
           var html = userFind(user);
@@ -41,19 +41,19 @@ $(document).on('turbolinks:load', function(){
       })
     });   
 
+    $(function(){
+      $(document).off('click');
       $(document).on("click",".chat-group-user__btn--add",function(){
-        var id =  $(this).attr('data-user-id')
-        var name = $(this).attr('data-user-name')
-        var html = addUser(id,name);
-        $('#chat-group-users').append(html);
-        $(this).parent().remove();
-      });
+      var id =  $(this).attr('data-user-id')
+      var name = $(this).attr('data-user-name')
+      var html = addUser(id,name);
+      $('#chat-group-users').append(html);
+      $(this).parent().remove();  
+      })
+     });
 
-      $(document).on("click",".chat-group-user__btn--remove",function(){
-        $(this).parent().remove();
-      });
 
-      $(document).on("click",".current-chat-group-user__btn--remove",function(){
-        $(this).parent().remove();
-      });
+    $(document).on("click",".chat-group-user__btn--remove",function(){
+      $(this).parent().remove();
+    });
 });
