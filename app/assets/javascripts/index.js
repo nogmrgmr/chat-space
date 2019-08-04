@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function(){
     return html;
   }
 
-  function addUser(user){
+  function addUser(id, name){
     var html = `<div class='chat-group-user'>
                   <input name='group[user_ids][]' type='hidden' value='${id}'>
                   <p class='chat-group-user__name'>${name}</p>
