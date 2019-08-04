@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function(){
         dataType: 'json'
       })
       .done(function(users){
-        $('.chat-group-user clearfix').remove();
+        $('#user-search-result').empty();
         if (users.length !== 0 && input.length != 0 ) {
           users.forEach(function(user) {
           var html = userFind(user);
