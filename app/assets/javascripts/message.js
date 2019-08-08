@@ -81,13 +81,13 @@ $(document).on('turbolinks:load', function(){
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       last_message_id = $('.message:last').data("id");
+      //last_message_idガ定義されていない
       console.log(last_message_id);
       $.ajax({ 
         url: "api/messages", 
-        type: 'GET', 
+        type: 'get', 
         dataType: 'json', 
-        data: {message: { id:message_id} }
-        // {id: last_message_id} 
+        data: {id: last_message_id} 
       })
       .done(function (messages) {
         alert('インターバル機能は動いていますが、、、、、、、');
