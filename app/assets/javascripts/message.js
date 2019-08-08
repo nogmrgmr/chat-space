@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
  
-  var buildMessage = function(message) {
+  var buildHTML = function(message) {
     if (message.content && message.image.url) {
       var html = '<div class="message" data-id=' + message.id + '>' +
         '<div class="upper-message">' +
@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(message){
-      var html = buildMessage(message);
+      var html = buildHTML(message);
       $('.messages').append(html)
       $('#message_content').val('')
       $('#message_image').val('')
@@ -81,27 +81,24 @@ $(document).on('turbolinks:load', function(){
 
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      console.log('if まで来ました');
       last_message_id = $('.message:last').data("id");
-      console.log(last_message_id);
       $.ajax({ 
         url: "api/messages", 
         type: 'GET', 
         dataType: 'json', 
-        data: {id: last_message_id} 
+        data: {last_id: last_message_id} 
       })
       .done(function (messages) {
-        console.log('ようやくdone来ました');
         var insertHTML = '';
         messages.forEach(function (message) {
           insertHTML = buildHTML(message); 
           $('.messages').append(insertHTML);
-        })
+          })
+        
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function () {
-        console.log("failです");
-        // alert('自動更新に失敗しました');
+        alert('自動更新に失敗しました');
       });
      }
     };
