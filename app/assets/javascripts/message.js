@@ -76,20 +76,22 @@ $(document).on('turbolinks:load', function(){
     .fail(function(){
       alert('エラー');
       $('.send').prop('disabled', false);
-  })
+    })
+  });
 
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      console.log('if まで来ました');
       last_message_id = $('.message:last').data("id");
       console.log(last_message_id);
       $.ajax({ 
         url: "api/messages", 
-        type: 'get', 
+        type: 'GET', 
         dataType: 'json', 
         data: {id: last_message_id} 
       })
       .done(function (messages) {
-        alert('インターバル機能は動いていますが、、、、、、、');
+        console.log('ようやくdone来ました');
         var insertHTML = '';
         messages.forEach(function (message) {
           insertHTML = buildHTML(message); 
@@ -98,39 +100,12 @@ $(document).on('turbolinks:load', function(){
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function () {
-        alert('自動更新に失敗しました');
+        console.log("failです");
+        // alert('自動更新に失敗しました');
       });
      }
     };
-    setInterval(reloadMessages, 10000);
-   });
+    setInterval(reloadMessages, 5000);
   });
 
 
-
-
-
-
-// var reloadMessages = function(){
-//   last_message_id = $('.message:last')
-//   $.ajax({
-//     url: 'api/messages',
-//     type:'GET',
-//     datatype: 'json',
-//     data: {id: last_message_id}
-//   })
-//   .done(function(messages){
-//     alert('success');
-//     var insertHTML = '';
-//     messages.forEach(function(user){
-//     var html = reloadMessages(user);
-//     $('.messages').append(html);
-//     })
-//   })
-//   .fail(function(){
-//     alert('error');
-//   });
-// $(function(){
-//     setInterval(reloadMessages, 5000);
-// })
-// };
