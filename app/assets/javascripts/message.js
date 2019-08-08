@@ -77,6 +77,7 @@ $(document).on('turbolinks:load', function(){
       alert('エラー');
       $('.send').prop('disabled', false);
   })
+
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       last_message_id = $('.message:last').data("id");
