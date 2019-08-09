@@ -1,13 +1,4 @@
 $(document).on('turbolinks:load', function(){
-    // debugger;
-    // var messageImage = function(message){
-    //   if(message.image.url == null){
-    //     return ``
-    //   } else {
-    //     return `<img class="lower-message__image" src='${message.image.url}'></img>`
-    //   }
-    // }
-  
     var buildHTML = function(message){
     var messageImage = message.image.url == null? 
     `` : `<img class="lower-message__image" src='${message.image.url}'></img>`;
@@ -45,8 +36,6 @@ $(document).on('turbolinks:load', function(){
     .done(function(message){
       var html = buildHTML(message);
       $('.messages').append(html)
-      $('#message_content').val('')
-      $('#message_image').val('')
       $('.send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $("form")[0].reset();
