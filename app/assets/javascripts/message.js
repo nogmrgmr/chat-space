@@ -1,32 +1,35 @@
 $(document).on('turbolinks:load', function(){
-  $(function() {
-    var createImage = function(message){
-      if(message.image.url == null){
-        return ``
-      } else {
-        return `<img class="lower-message__image" src='${message.image.url}'></img>`
-      }
-    }
+    // debugger;
+    // var messageImage = function(message){
+    //   if(message.image.url == null){
+    //     return ``
+    //   } else {
+    //     return `<img class="lower-message__image" src='${message.image.url}'></img>`
+    //   }
+    // }
   
     var buildHTML = function(message){
-      var html = `<div class="message" data-id="${message.id}">
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
+    var messageImage = message.image.url == null? 
+    `` : `<img class="lower-message__image" src='${message.image.url}'></img>`;
+
+    var html = `<div class="message" data-id="${message.id}">
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user_name}
                     </div>
-                    <div class="lower-message">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      </p>
-                        ${createImage(message)}  
-                  </div>`
+                    <div class="upper-message__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                      ${messageImage}  
+                </div>`
       return html
     }
-  
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -46,6 +49,7 @@ $(document).on('turbolinks:load', function(){
       $('#message_image').val('')
       $('.send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $("form")[0].reset();
     })
     .fail(function(){
       alert('エラー');
@@ -78,5 +82,4 @@ $(document).on('turbolinks:load', function(){
     };
     setInterval(reloadMessages, 1000);
   });
-})
 
