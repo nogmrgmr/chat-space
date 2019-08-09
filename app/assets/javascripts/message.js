@@ -1,32 +1,25 @@
 $(document).on('turbolinks:load', function(){
- 
-  
-  function buildMessage(message){
-  　var img = message.image.url
-     ?  img = `<img src=${message.image.url}>`
-     :  img = ``;
+    var buildHTML = function(message){
+    var messageImage = message.image.url == null? 
+    `` : `<img class="lower-message__image" src='${message.image.url}'></img>`;
 
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
-                      ${message.user}
+                      ${message.user_name}
                     </div>
                     <div class="upper-message__date">
-                      ${message.date}
+                      ${message.created_at}
                     </div>
                   </div>
                   <div class="lower-message">
                     <p class="lower-message__content">
-                    ${message.content}
-                    </p> 
-                    <p class="lower-message__image">
-                    ${img}
+                      ${message.content}
                     </p>
-                  </div>
-
+                      ${messageImage}  
                 </div>`
-    return html;
-  }
+      return html
+    }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -41,16 +34,41 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(message){
-      var html = buildMessage(message);
+      var html = buildHTML(message);
       $('.messages').append(html)
-      $('#message_content').val('')
-      $('#message_image').val('')
       $('.send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $("form")[0].reset();
     })
     .fail(function(){
       alert('エラー');
       $('.send').prop('disabled', false);
     })
-  })
-});
+  });
+
+  var reloadMessages = function () {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.message:last').data("id");
+      $.ajax({ 
+        url: "api/messages", 
+        type: 'GET', 
+        dataType: 'json', 
+        data: {last_id: last_message_id} 
+      })
+      .done(function (messages) {
+        var insertHTML = '';
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message); 
+          $('.messages').append(insertHTML);
+          })
+        
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      })
+      .fail(function () {
+        alert('自動更新に失敗しました');
+      });
+     }
+    };
+    setInterval(reloadMessages, 1000);
+  });
+
