@@ -1,57 +1,31 @@
 $(document).on('turbolinks:load', function(){
- 
-  var buildHTML = function(message) {
-    if (message.content && message.image.url) {
-      var html = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<p class="lower-message__content">' +
-            message.content +
-          '</p>' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
-    } else if (message.content) {
-      var html = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<p class="lower-message__content">' +
-            message.content +
-          '</p>' +
-        '</div>' +
-      '</div>'
-    } else if (message.image.url) {
-      var html = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
-    };
-    return html;
-  };
-
+  $(function() {
+    var createImage = function(message){
+      if(message.image.url == null){
+        return ``
+      } else {
+        return `<img class="lower-message__image" src='${message.image.url}'></img>`
+      }
+    }
+  
+    var buildHTML = function(message){
+      var html = `<div class="message" data-id="${message.id}">
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        ${message.user_name}
+                      </div>
+                      <div class="upper-message__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                        ${message.content}
+                      </p>
+                        ${createImage(message)}  
+                  </div>`
+      return html
+    }
   
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -102,7 +76,7 @@ $(document).on('turbolinks:load', function(){
       });
      }
     };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 1000);
   });
-
+})
 
