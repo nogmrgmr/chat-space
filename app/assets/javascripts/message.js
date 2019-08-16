@@ -69,6 +69,6 @@ $(document).on('turbolinks:load', function(){
       });
      }
     };
-    setInterval(reloadMessages, 1000);
+    setInterval(reloadMessages, 10000);
   });
 
