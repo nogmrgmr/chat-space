@@ -77,6 +77,18 @@
     }
   }
 
+
+  #login-user {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+  }
+
   .chat-group-user {
     padding: 0 15px;
     line-height: 50px;
@@ -87,7 +99,8 @@
       clear: both;
       display: block;
     }
-
+  
+  
 
 
     .chat-group-user__name {

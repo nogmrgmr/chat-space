@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function(){
       $("form")[0].reset();
     })
     .fail(function(){
-      alert('エラー');
+      alert('メッセージを入力してくださいませ');
       $('.send').prop('disabled', false);
     })
   });
