@@ -2,6 +2,8 @@ $(document).on('turbolinks:load', function(){
     var buildHTML = function(message){
     var messageImage = message.image.url == null? 
     `` : `<img class="lower-message__image" src='${message.image.url}'></img>`;
+ 
+
 
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
@@ -39,6 +41,8 @@ $(document).on('turbolinks:load', function(){
       $('.send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $("form")[0].reset();
+      $('.messageImage').css('height','50px');
+  
     })
     .fail(function(){
       alert('メッセージを入力してくださいませ');
