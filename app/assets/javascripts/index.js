@@ -39,6 +39,9 @@ $(document).on('turbolinks:load', function(){
       .fail(function(){
         alert('NOT JSON');
       })
+      $(document).on("click",".chat-group-user__btn--remove",function(){
+        $(this).parent().remove();
+      })
     });   
 
     $(function(){
